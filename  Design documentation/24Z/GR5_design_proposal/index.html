@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>GR5 design proposal - MidiTok</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "GR5 design proposal";
+        var mkdocs_page_input_path = " Design documentation/24Z/GR5_design_proposal.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MidiTok
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text"> Design documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >23Z</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../23Z/WIMU-GR3-Dokumentacja/">Projekt WIMU 2023Z - Dokumentacja końcowa</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >24L</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../24L/notes_pl/">WIMU-MidiTokVisualizer</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >24Z</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../24Z_update/">24Z update</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">GR5 design proposal</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#autorzy">Autorzy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#temat-projektu">Temat projektu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#harmonogram-projektu">Harmonogram projektu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#planowana-funkcjonalnosc-programu">Planowana funkcjonalność programu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#planowany-stack-technologiczny">Planowany stack technologiczny</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bibliografia">Bibliografia</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >25L</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../25L/Design_proposal_25L/">WIMU 25L Design Proposal</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../25L/Weekly_Update/">Weekly Update</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text"> Development documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../%20Development%20documentation/What/">What</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Technical documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Technical%20documentation/What/">What</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MidiTok</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item"> Design documentation</li>
+          <li class="breadcrumb-item">24Z</li>
+      <li class="breadcrumb-item active">GR5 design proposal</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <div class="toc">
+<ul>
+<li><a href="#wimu-projekt-2024l-design-proposal">WIMU Projekt 2024L - Design Proposal</a><ul>
+<li><a href="#autorzy">Autorzy</a></li>
+<li><a href="#temat-projektu">Temat projektu</a></li>
+<li><a href="#harmonogram-projektu">Harmonogram projektu</a></li>
+<li><a href="#planowana-funkcjonalnosc-programu">Planowana funkcjonalność programu</a></li>
+<li><a href="#planowany-stack-technologiczny">Planowany stack technologiczny</a></li>
+<li><a href="#bibliografia">Bibliografia</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="wimu-projekt-2024l-design-proposal">WIMU Projekt 2024L - Design Proposal</h1>
+<hr />
+<h2 id="autorzy">Autorzy</h2>
+<p><strong><em>Piotr Malesa</em></strong> - 01112501@pw.edu.pl</p>
+<p><strong><em>Kacper Stefański</em></strong> - kacper.stefanski.stud@pw.edu.pl</p>
+<p><strong><em>Konstantin Panov</em></strong> - konstantin.panov.stud@pw.edu.pl</p>
+<h2 id="temat-projektu">Temat projektu</h2>
+<p>Tematem projektu jest kontynuacja projektu <strong>MIDITok Visualizer</strong> z poprzedniej edycji przedmiotu.</p>
+<p>Na chwilę obecną narzędzie to składa się z aplikacji web'owej, która pozwala na przegląd tokenów wygenerowanych przez bibliotekę MidiTok na podstawie wgranego przez użytkownika pliku w formacie MIDI oraz wizualizację metryk (np. tonacja, metrum, tempo), które są wyczytywane w celu dokładnej analizy zapisanych danych w formacie MIDI.</p>
+<h2 id="harmonogram-projektu">Harmonogram projektu</h2>
+<ul>
+<li>Tydzień 1 (19.02 - 23.02):    -</li>
+<li>Tydzień 2 (26.02 - 01.03):    -</li>
+<li>Tydzień 3 (04.03 - 08.03):    -</li>
+<li><strong>Tydzień 4 (11.03 - 15.03)</strong>:     -</li>
+<li><strong>Tydzień 5 (18.03 - 22.03)</strong>:    Dostarczenie poprawionego design proposal'a ze zmodyfikowanym planem rozszerzenia aplikacji</li>
+<li><strong>Tydzień 6 (25.03 - 29.03)</strong>:    Przygotowanie środowiska do pracy nad projektem oraz rozpoczęcie rozwoju nowych funkcjonalności</li>
+<li><strong>Tydzień 7 (01.04 - 05.04)</strong>:    Przerwa świąteczna </li>
+<li><strong>Tydzień 8 (08.04 - 12.04)</strong>:    Dalsze prace nad UI oraz prezentacja prototypu</li>
+<li><strong>Tydzień 9 (15.04 - 19.04)</strong>:    Dalsze prace nad UI</li>
+<li><strong>Tydzień 10 (22.04 -26.04)</strong>:    Ukończona część rozszerzenia UI</li>
+<li><strong>Tydzień 11 (29.04 - 03.05)</strong>:   Majówka</li>
+<li><strong>Tydzień 12 (06.05 - 10.05)</strong>:   Praca nad implementacją kolejnych tokenizerów (MMM, MuMIDI) i ewentualne poprawki UI</li>
+<li><strong>Tydzień 13 (13.05 - 17.05)</strong>:   Dostarczenie i zademonstrowanie funkcjonalnego prototypu</li>
+<li><strong>Tydzień 14 (20.05 - 24.05)</strong>:   Ukończenie rozszerzenia API o nowe tokenizery</li>
+<li><strong>Tydzień 15 (27.05 - 31.05)</strong>:   Praca nad poprawkami po pierwszej prezentacji projektu</li>
+<li><strong>Tydzień 16 (03.06 - 07.06)</strong>:   Oddanie projektu (szacowany termin)</li>
+<li>Tydzień 17 (10.06 - 14.06):   -</li>
+</ul>
+<p>Powyższy harmonogram dopuszcza możliwość modyfikacji dat kolejnych etapów projektu, w zależności od szybkości postępu prac nad projektem lub w wyniku zdarzeń losowych w ciągu semestru. Jest to jedynie poglądowy plan, gdyż na chwilę obecną ciężko dokładnie sprecyzować ile czasu zajmą nam poszczególne etapy.</p>
+<h2 id="planowana-funkcjonalnosc-programu">Planowana funkcjonalność programu</h2>
+<p>Planowanym przez nas rozszerzeniem aplikacji MIDITok Visualizer jest modyfikacja zarówno istniejącej części backendowej jak i frontendowej. Część API została by poszerzona o kolejne tokenizery (MMM, MuMIDI) a część frontendu o ulepszony widok tokenów. Obecnie istniejący widok tokenów (tokeny oddzielnych ścieżej w oddzielnych wierszach) pozostanie bez zmian, natomiast zostanie dodany nowy i czytelniejszy widok tokenów, gdzie tokeny oddzielnych ścieżek byłyby wyświetlane w oddzielnych zakładkach oraz byłyby pomniejszone i wyświetlane wierszami. Dodatkowo obok tokenów każdej ścieżki wgranego pliku MIDI wyświetlony zostałby piano roll. Po najechaniu na konkretny dźwięk w piano roll'u danej ścieżi zostaną podświetlone tokeny, które mu odpowiadają (i na odwrót - po najechaniu na dany token podświetli się powiązany z nim dźwięk na piano roll'u). Okno do konfiguracji tokenizerów również zostanie ulepszone.</p>
+<h2 id="planowany-stack-technologiczny">Planowany stack technologiczny</h2>
+<p>Przewidywany stack technologiczny jest oczywiście poniekąd uzależniony od obecnej wersji projektu, który zamierzamy rozszerzyć. Zamierzamy zatem wykorzystać podobne narzędzia co pierwotni autorzy projektu.</p>
+<ul>
+<li><strong>Frontend</strong>: TypeScript, React</li>
+<li><strong>Backend</strong>: Python, FastAPI/Flask</li>
+<li>
+<p><strong>Tokenizacja plików</strong>: MidiTok</p>
+</li>
+<li>
+<p><strong>Hosting aplikacji</strong>: Heroku</p>
+</li>
+<li>
+<p><strong>System kontroli wersji</strong>: Git</p>
+</li>
+<li>
+<p><strong>Hosting repozytorium</strong>: GitLab</p>
+</li>
+<li>
+<p><strong>Testy</strong>: pytest</p>
+</li>
+</ul>
+<hr />
+<h2 id="bibliografia">Bibliografia</h2>
+<ul>
+<li>MIDITok. (n.d.). <em>MIDITok Documentation (Version 3.0.1)</em>.  (<a href="https://miditok.readthedocs.io/en/v3.0.1/">https://miditok.readthedocs.io/en/v3.0.1/</a>) </li>
+</ul>
+<p>W miarę postępów prac nad projektem bibliografia będzie mogła być rozszerzona.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../24Z_update/" class="btn btn-neutral float-left" title="24Z update"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../25L/Design_proposal_25L/" class="btn btn-neutral float-right" title="WIMU 25L Design Proposal">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../24Z_update/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../25L/Design_proposal_25L/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
