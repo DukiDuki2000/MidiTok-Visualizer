@@ -14,7 +14,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Note exctractor Class";
-        var mkdocs_page_input_path = " Development documentation/core/service/midi/note_extractor.md";
+        var mkdocs_page_input_path = "Development documentation/core/service/midi/note_extractor.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -40,40 +40,7 @@
                 <li class="toctree-l1"><a class="reference internal" href="../../../../..">Home</a>
                 </li>
               </ul>
-              <p class="caption"><span class="caption-text"> Design documentation</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" >23Z</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../../../%20Design%20documentation/23Z/WIMU-GR3-Dokumentacja/">Projekt WIMU 2023Z - Dokumentacja końcowa</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" >24L</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../../../%20Design%20documentation/24L/notes_pl/">WIMU-MidiTokVisualizer</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" >24Z</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../../../%20Design%20documentation/24Z/24Z_update/">24Z update</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../../../%20Design%20documentation/24Z/GR5_design_proposal/">GR5 design proposal</a>
-                </li>
-    </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" >25L</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../../../../%20Design%20documentation/25L/Design_proposal_25L/">WIMU 25L Design Proposal</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../../../%20Design%20documentation/25L/Meeting_Summery/">Notatka ze spotkania 17.4.25</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../../../../%20Design%20documentation/25L/Weekly_Update/">Weekly Update</a>
-                </li>
-    </ul>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text"> Development documentation</span></p>
+              <p class="caption"><span class="caption-text">Development documentation</span></p>
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../../../../What/">What</a>
                   </li>
@@ -111,7 +78,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../../../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item"> Development documentation</li>
+          <li class="breadcrumb-item">Development documentation</li>
           <li class="breadcrumb-item">Core</li>
           <li class="breadcrumb-item">Service</li>
           <li class="breadcrumb-item">Midi</li>
@@ -217,7 +184,8 @@
 <span class="normal">45</span>
 <span class="normal">46</span>
 <span class="normal">47</span>
-<span class="normal">48</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">NoteExtractor</span><span class="p">:</span>
+<span class="normal">48</span>
+<span class="normal">49</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">NoteExtractor</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">pass</span>
 
@@ -238,17 +206,18 @@
                 <span class="n">note_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pitch_to_name</span><span class="p">(</span><span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">)</span>
                 <span class="n">track_notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                     <span class="n">Note</span><span class="p">(</span>
-                        <span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">,</span>
-                        <span class="n">note_name</span><span class="p">,</span>
-                        <span class="n">note</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
-                        <span class="n">note</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
-                        <span class="n">note</span><span class="o">.</span><span class="n">velocity</span>
+                        <span class="n">pitch</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">,</span>
+                        <span class="n">name</span><span class="o">=</span><span class="n">note_name</span><span class="p">,</span>
+                        <span class="n">start</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                        <span class="n">end</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+                        <span class="n">velocity</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">velocity</span>
                     <span class="p">)</span>
                 <span class="p">)</span>
             <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">track_notes</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">notes</span>
+
     <span class="nd">@staticmethod</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_pitch_to_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pitch</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_pitch_to_name</span><span class="p">(</span><span class="n">pitch</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Converts a MIDI pitch to a note name</span>
 
@@ -382,11 +351,11 @@
             <span class="n">note_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pitch_to_name</span><span class="p">(</span><span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">)</span>
             <span class="n">track_notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                 <span class="n">Note</span><span class="p">(</span>
-                    <span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">,</span>
-                    <span class="n">note_name</span><span class="p">,</span>
-                    <span class="n">note</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
-                    <span class="n">note</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
-                    <span class="n">note</span><span class="o">.</span><span class="n">velocity</span>
+                    <span class="n">pitch</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">,</span>
+                    <span class="n">name</span><span class="o">=</span><span class="n">note_name</span><span class="p">,</span>
+                    <span class="n">start</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+                    <span class="n">end</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+                    <span class="n">velocity</span><span class="o">=</span><span class="n">note</span><span class="o">.</span><span class="n">velocity</span>
                 <span class="p">)</span>
             <span class="p">)</span>
         <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">track_notes</span><span class="p">)</span>
