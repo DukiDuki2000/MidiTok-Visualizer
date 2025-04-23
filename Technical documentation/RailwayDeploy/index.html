@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Deploying the Application to Railway - MidiTok</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Deploying the Application to Railway";
+        var mkdocs_page_input_path = "Technical documentation/RailwayDeploy.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> MidiTok
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Development documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Development%20documentation/What/">What</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Service</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/core/service/midi_processing/">midi_processing Class</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Technical documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Deploying the Application to Railway</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#deployment-steps">Deployment Steps</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../What/">What</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">MidiTok</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Technical documentation</li>
+      <li class="breadcrumb-item active">Deploying the Application to Railway</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="deploying-the-application-to-railway">Deploying the Application to Railway</h1>
+<p>The application can be successfully deployed using the <a href="https://railway.app">Railway</a> platform. To do so, you'll need to use the files from the <code>railway</code> folder and make a few configuration changes.</p>
+<blockquote>
+<p><strong>Note</strong>: Railway offers a free trial that allows deployments, but it is limited to 5$.</p>
+</blockquote>
+<h2 id="deployment-steps">Deployment Steps</h2>
+<ol>
+<li>
+<p><strong>Sign Up and Connect GitHub Repository</strong><br />
+   Register on <a href="https://railway.app">Railway</a> and connect your GitHub repository.</p>
+</li>
+<li>
+<p><strong>Create Two Services</strong><br />
+   Set up two separate services — one for the frontend and one for the backend.</p>
+</li>
+<li>
+<p><strong>Set Environment Variables</strong><br />
+   For each service, add the environment variable <code>RAILWAY_DOCKERFILE_PATH</code>, pointing to the respective <code>Dockerfile</code> location inside the <code>railway</code> folder.</p>
+<details class="example">
+<summary>Dockerfile</summary>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-buster</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libc6
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">poetry</span><span class="o">==</span><span class="m">1</span>.6.1
+<span class="k">ENV</span><span class="w"> </span><span class="nv">POETRY_NO_INTERACTION</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">POETRY_VIRTUALENVS_IN_PROJECT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">POETRY_VIRTUALENVS_CREATE</span><span class="o">=</span><span class="m">1</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">REACT_APP_API_BASE_URL</span><span class="o">=</span><span class="s2">&quot;https://miditok-visualizer-front-production.up.railway.app&quot;</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>backend/pyproject.toml<span class="w"> </span>backend/poetry.lock<span class="w"> </span>./
+<span class="k">RUN</span><span class="w"> </span>touch<span class="w"> </span>README.md
+<span class="k">RUN</span><span class="w"> </span>poetry<span class="w"> </span>install<span class="w"> </span>--no-root
+<span class="k">COPY</span><span class="w"> </span>backend/core<span class="w"> </span>./core
+<span class="k">COPY</span><span class="w"> </span>backend/tests<span class="w"> </span>./tests
+<span class="k">RUN</span><span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest
+
+<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim-buster</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">VIRTUAL_ENV</span><span class="o">=</span>/app/.venv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/app/.venv/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">REACT_APP_API_BASE_URL</span><span class="o">=</span><span class="s2">&quot;https://miditok-visualizer-front-production.up.railway.app&quot;</span>
+<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/app/.venv<span class="w"> </span>/app/.venv
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<span class="k">COPY</span><span class="w"> </span>backend/core<span class="w"> </span>./core
+<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;core.main&quot;</span><span class="p">]</span>
+</code></pre></div>
+</details>
+</li>
+<li>
+<p><strong>Configure Ports</strong><br />
+   After deployment, set the following ports:  </p>
+<ul>
+<li>Frontend: <code>3000</code>  </li>
+<li>Backend: <code>8000</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Add the <code>railway.json</code> File</strong><br />
+   In the <code>Config as Code</code> section, add the <code>railway.json</code> file and update the service names by assigning the correct <code>RAILWAY_SERVICE_ID</code> variables.</p>
+<details class="example">
+<summary>railway.json</summary>
+<div class="highlight"><pre><span></span><code>{
+    &quot;services&quot;: {
+      &quot;7c51be2c-4e29-415e-bc14-40e7c7537aec&quot;: {
+        &quot;name&quot;: &quot;back&quot;,
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;docker&quot;,
+          &quot;dockerfilePath&quot;: &quot;railway/backend/Dockerfile&quot;,
+          &quot;buildContext&quot;: &quot;.&quot;
+        }
+      },
+      &quot;114f992a-2c0a-49f9-be31-8c9b830d1bbb&quot;: {
+        &quot;name&quot;: &quot;front&quot;,
+        &quot;build&quot;: {
+          &quot;builder&quot;: &quot;docker&quot;,
+          &quot;dockerfilePath&quot;: &quot;railway/frontend/Dockerfile&quot;,
+          &quot;buildContext&quot;: &quot;.&quot;
+        }
+      }
+    }
+  }
+</code></pre></div>
+</details>
+</li>
+<li>
+<p><strong>Update Dockerfiles</strong><br />
+   Once the services are deployed, update the Dockerfiles by replacing the environment variables for frontend and backend URLs with the ones provided by Railway.</p>
+</li>
+<li>
+<p><strong>Enable Sleep Mode for Backend</strong><br />
+   To reduce data transfer usage, consider enabling <strong>sleep mode</strong> for the backend service when it's idle.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Development%20documentation/core/service/midi_processing/" class="btn btn-neutral float-left" title="midi_processing Class"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../What/" class="btn btn-neutral float-right" title="What">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Development%20documentation/core/service/midi_processing/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../What/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
