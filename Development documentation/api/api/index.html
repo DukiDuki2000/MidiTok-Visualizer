@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>API - MidiTok Visualizer</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "API";
+        var mkdocs_page_input_path = "Development documentation/api/api.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MidiTok Visualizer
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">MidiTokVisualizer</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#midi-processing-and-visualization-library">MIDI Processing and Visualization Library</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#built-on-miditok">Built on MidiTok</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#supported-tokenizers">Supported Tokenizers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../..#running-the-application">Running the Application</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#using-docker-compose-recommended">Using Docker Compose (Recommended)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#running-the-application-manually">Running the Application Manually</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#running-the-documentation">Running the Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../..#online-deployment">Online Deployment</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Development documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Api</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">API</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#endpoints">Endpoints</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#process-midi-file">Process MIDI File</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#error-handling">Error Handling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#implementation-details">Implementation Details</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#process-endpoint-logic">Process Endpoint Logic</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#environment-variables">Environment Variables</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../model/">Model</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../model/#configmodel">ConfigModel</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../model/#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../model/#musicinformationdata">MusicInformationData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../model/#parameters_1">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../model/#basicinfodata">BasicInfoData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../model/#parameters_2">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../model/#metricsdata">MetricsData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../model/#parameters_3">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../model/#note">Note</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../model/#parameters_4">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Service</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/MidiInfoExtractor/">MIDI Info Extractor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor">midi_info_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor.MidiInformationExtractor">MidiInformationExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/MidiLoader/">MIDI Loader Class</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiLoader/#backend.core.service.midi.midi_loader">midi_loader</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiLoader/#backend.core.service.midi.midi_loader-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/MidiLoader/#backend.core.service.midi.midi_loader.MidiLoader">MidiLoader</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/MidiProcessing/">MIDI Processing</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiProcessing/#backend.core.service.midi_processing">midi_processing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiProcessing/#backend.core.service.midi_processing-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/MidiProcessing/#backend.core.service.midi_processing.MidiProcessor">MidiProcessor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/NoteExtractor/">Note Extractor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteExtractor/#backend.core.service.note.note_extractor">note_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteExtractor/#backend.core.service.note.note_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/NoteExtractor/#backend.core.service.note.note_extractor.NoteExtractor">NoteExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/NoteId/">Note ID</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteId/#backend.core.service.note.note_id">note_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteId/#backend.core.service.note.note_id-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/NoteId/#backend.core.service.note.note_id.NoteIDHandler">NoteIDHandler</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/TokenizerConfig/">Tokenizer Config</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config">tokenizer_config</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config.TokenizerConfigUser">TokenizerConfigUser</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/TokenizerFactory/">Tokenizer Factory</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory">tokenizer_factory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory.TokenizerFactory">TokenizerFactory</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Technical documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Technical%20documentation/RailwayDeploy/">Deploying the Application to Railway</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Technical%20documentation/RailwayDeploy/#deployment-steps">Deployment Steps</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MidiTok Visualizer</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Development documentation</li>
+          <li class="breadcrumb-item">Api</li>
+      <li class="breadcrumb-item active">API</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="api">API</h1>
+<p>This API provides endpoints for processing MIDI files. It uses FastAPI to create a RESTful API that can tokenize MIDI files, extract note information, and retrieve musical metrics.</p>
+<h2 id="overview">Overview</h2>
+<p>The API has the following components:</p>
+<ul>
+<li><strong>FastAPI Application</strong>: Handles HTTP requests and responses</li>
+<li><strong>CORS Middleware</strong>: Configures Cross-Origin Resource Sharing</li>
+<li><strong>Logging Middleware</strong>: Captures request/response details for debugging</li>
+<li><strong>Exception Handlers</strong>: Manages validation and unexpected errors</li>
+<li><strong>MidiProcessor</strong>: Core component for processing MIDI files</li>
+</ul>
+<h2 id="endpoints">Endpoints</h2>
+<h3 id="process-midi-file">Process MIDI File</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>POST /process
+</span></code></pre></div>
+<p>This endpoint processes a MIDI file according to the provided configuration.</p>
+<h4 id="request">Request</h4>
+<p>The request must be sent as <code>multipart/form-data</code> with the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td>string</td>
+<td>JSON configuration for MIDI processing</td>
+</tr>
+<tr>
+<td>file</td>
+<td>file</td>
+<td>MIDI file to process (.mid or .midi format)</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>config</code> field should contain a JSON object that conforms to the <code>ConfigModel</code> schema.</p>
+<h4 id="response">Response</h4>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;success&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">     </span><span class="c1">// Tokenized MIDI data</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nt">&quot;notes&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">      </span><span class="c1">// Extracted notes with IDs</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">&quot;metrics&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">     </span><span class="c1">// Musical metrics and information</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="error-responses">Error Responses</h4>
+<ul>
+<li><strong>415 Unsupported Media Type</strong>: If the uploaded file is not a MIDI file</li>
+<li><strong>422 Unprocessable Entity</strong>: If the request parameters are invalid</li>
+<li><strong>500 Internal Server Error</strong>: If an unexpected error occurs during processing</li>
+</ul>
+<h2 id="error-handling">Error Handling</h2>
+<p>The API includes robust error handling:</p>
+<ol>
+<li><strong>Validation Errors</strong>: Returns a 422 status code with a message indicating invalid parameters</li>
+<li><strong>HTTP Exceptions</strong>: Returns the appropriate status code with a detailed error message</li>
+<li><strong>Unexpected Errors</strong>: Returns a 500 status code and logs the full stack trace for debugging</li>
+</ol>
+<h2 id="implementation-details">Implementation Details</h2>
+<h3 id="process-endpoint-logic">Process Endpoint Logic</h3>
+<p>The <code>/process</code> endpoint performs these steps:</p>
+<ol>
+<li>Validates that the uploaded file is a MIDI file</li>
+<li>Parses the configuration from the form data</li>
+<li>Reads the MIDI file as bytes</li>
+<li>Tokenizes the MIDI file using the <code>MidiProcessor</code></li>
+<li>Extracts note information and assigns unique note IDs</li>
+<li>Retrieves musical metrics and information</li>
+<li>Returns all processed data as a JSON response</li>
+</ol>
+<h2 id="environment-variables">Environment Variables</h2>
+<ul>
+<li><code>REACT_APP_API_BASE_URL</code>: The base URL for the React application (default: "http://localhost:3000")</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../.." class="btn btn-neutral float-left" title="MidiTokVisualizer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../model/" class="btn btn-neutral float-right" title="Model">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../model/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

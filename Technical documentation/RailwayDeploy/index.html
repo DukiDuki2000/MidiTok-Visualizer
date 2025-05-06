@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Deploying the Application to Railway - MidiTok</title>
+    <title>Deploying the Application to Railway - MidiTok Visualizer</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../../css/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -31,25 +32,191 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href="../.." class="icon icon-home"> MidiTok
-        </a>
+          <a href="../.." class="icon icon-home"> MidiTok Visualizer
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                <li class="toctree-l1"><a class="reference internal" href="../..">MidiTokVisualizer</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../..#midi-processing-and-visualization-library">MIDI Processing and Visualization Library</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../..#built-on-miditok">Built on MidiTok</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../..#supported-tokenizers">Supported Tokenizers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../..#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../..#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../..#running-the-application">Running the Application</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../..#using-docker-compose-recommended">Using Docker Compose (Recommended)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../..#running-the-application-manually">Running the Application Manually</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../..#running-the-documentation">Running the Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../..#online-deployment">Online Deployment</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Development documentation</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../Development%20documentation/What/">What</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" >Core</a>
+                  <li class="toctree-l1"><a class="reference internal" >Api</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" >Service</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/api/api/">API</a>
     <ul>
-                <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/core/service/midi_processing/">midi_processing Class</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/api/#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/api/#endpoints">Endpoints</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/api/api/#process-midi-file">Process MIDI File</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/api/#error-handling">Error Handling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/api/#implementation-details">Implementation Details</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/api/api/#process-endpoint-logic">Process Endpoint Logic</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/api/#environment-variables">Environment Variables</a>
+    </li>
+    </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/api/model/">Model</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/model/#configmodel">ConfigModel</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/api/model/#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/model/#musicinformationdata">MusicInformationData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/api/model/#parameters_1">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/model/#basicinfodata">BasicInfoData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/api/model/#parameters_2">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/model/#metricsdata">MetricsData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/api/model/#parameters_3">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/api/model/#note">Note</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/api/model/#parameters_4">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Service</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/service/MidiInfoExtractor/">MIDI Info Extractor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor">midi_info_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor.MidiInformationExtractor">MidiInformationExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/service/MidiLoader/">MIDI Loader Class</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/MidiLoader/#backend.core.service.midi.midi_loader">midi_loader</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/MidiLoader/#backend.core.service.midi.midi_loader-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/service/MidiLoader/#backend.core.service.midi.midi_loader.MidiLoader">MidiLoader</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/service/MidiProcessing/">MIDI Processing</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/MidiProcessing/#backend.core.service.midi_processing">midi_processing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/MidiProcessing/#backend.core.service.midi_processing-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/service/MidiProcessing/#backend.core.service.midi_processing.MidiProcessor">MidiProcessor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/service/NoteExtractor/">Note Extractor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/NoteExtractor/#backend.core.service.note.note_extractor">note_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/NoteExtractor/#backend.core.service.note.note_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/service/NoteExtractor/#backend.core.service.note.note_extractor.NoteExtractor">NoteExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/service/NoteId/">Note ID</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/NoteId/#backend.core.service.note.note_id">note_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/NoteId/#backend.core.service.note.note_id-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/service/NoteId/#backend.core.service.note.note_id.NoteIDHandler">NoteIDHandler</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/service/TokenizerConfig/">Tokenizer Config</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config">tokenizer_config</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config.TokenizerConfigUser">TokenizerConfigUser</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Development%20documentation/service/TokenizerFactory/">Tokenizer Factory</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory">tokenizer_factory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../Development%20documentation/service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../Development%20documentation/service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory.TokenizerFactory">TokenizerFactory</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
     </ul>
@@ -63,8 +230,6 @@
     </li>
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../What/">What</a>
-                  </li>
               </ul>
       </div>
     </div>
@@ -73,7 +238,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../..">MidiTok</a>
+          <a href="../..">MidiTok Visualizer</a>
         
       </nav>
       <div class="wy-nav-content">
@@ -110,30 +275,30 @@
    For each service, add the environment variable <code>RAILWAY_DOCKERFILE_PATH</code>, pointing to the respective <code>Dockerfile</code> location inside the <code>railway</code> folder.</p>
 <details class="example">
 <summary>Dockerfile</summary>
-<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-buster</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
-<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libc6
-<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">poetry</span><span class="o">==</span><span class="m">1</span>.6.1
-<span class="k">ENV</span><span class="w"> </span><span class="nv">POETRY_NO_INTERACTION</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="nv">POETRY_VIRTUALENVS_IN_PROJECT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="nv">POETRY_VIRTUALENVS_CREATE</span><span class="o">=</span><span class="m">1</span>
-<span class="k">ENV</span><span class="w"> </span><span class="nv">REACT_APP_API_BASE_URL</span><span class="o">=</span><span class="s2">&quot;https://miditok-visualizer-front-production.up.railway.app&quot;</span>
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
-<span class="k">COPY</span><span class="w"> </span>backend/pyproject.toml<span class="w"> </span>backend/poetry.lock<span class="w"> </span>./
-<span class="k">RUN</span><span class="w"> </span>touch<span class="w"> </span>README.md
-<span class="k">RUN</span><span class="w"> </span>poetry<span class="w"> </span>install<span class="w"> </span>--no-root
-<span class="k">COPY</span><span class="w"> </span>backend/core<span class="w"> </span>./core
-<span class="k">COPY</span><span class="w"> </span>backend/tests<span class="w"> </span>./tests
-<span class="k">RUN</span><span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest
-
-<span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim-buster</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
-<span class="k">ENV</span><span class="w"> </span><span class="nv">VIRTUAL_ENV</span><span class="o">=</span>/app/.venv<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/app/.venv/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="nv">REACT_APP_API_BASE_URL</span><span class="o">=</span><span class="s2">&quot;https://miditok-visualizer-front-production.up.railway.app&quot;</span>
-<span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/app/.venv<span class="w"> </span>/app/.venv
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
-<span class="k">COPY</span><span class="w"> </span>backend/core<span class="w"> </span>./core
-<span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;core.main&quot;</span><span class="p">]</span>
-</code></pre></div>
+<div class="language-Dockerfile highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-buster</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>libc6
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">poetry</span><span class="o">==</span><span class="m">1</span>.6.1
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">ENV</span><span class="w"> </span><span class="nv">POETRY_NO_INTERACTION</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nv">POETRY_VIRTUALENVS_IN_PROJECT</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nv">POETRY_VIRTUALENVS_CREATE</span><span class="o">=</span><span class="m">1</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">ENV</span><span class="w"> </span><span class="nv">REACT_APP_API_BASE_URL</span><span class="o">=</span><span class="s2">&quot;https://miditok-visualizer-front-production.up.railway.app&quot;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">COPY</span><span class="w"> </span>backend/pyproject.toml<span class="w"> </span>backend/poetry.lock<span class="w"> </span>./
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">RUN</span><span class="w"> </span>touch<span class="w"> </span>README.md
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">RUN</span><span class="w"> </span>poetry<span class="w"> </span>install<span class="w"> </span>--no-root
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">COPY</span><span class="w"> </span>backend/core<span class="w"> </span>./core
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">COPY</span><span class="w"> </span>backend/tests<span class="w"> </span>./tests
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">RUN</span><span class="w"> </span>poetry<span class="w"> </span>run<span class="w"> </span>pytest
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.11-slim-buster</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="k">ENV</span><span class="w"> </span><span class="nv">VIRTUAL_ENV</span><span class="o">=</span>/app/.venv<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/app/.venv/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nv">REACT_APP_API_BASE_URL</span><span class="o">=</span><span class="s2">&quot;https://miditok-visualizer-front-production.up.railway.app&quot;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>builder<span class="w"> </span>/app/.venv<span class="w"> </span>/app/.venv
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="k">COPY</span><span class="w"> </span>backend/core<span class="w"> </span>./core
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;core.main&quot;</span><span class="p">]</span>
+</span></code></pre></div>
 </details>
 </li>
 <li>
@@ -149,27 +314,27 @@
    In the <code>Config as Code</code> section, add the <code>railway.json</code> file and update the service names by assigning the correct <code>RAILWAY_SERVICE_ID</code> variables.</p>
 <details class="example">
 <summary>railway.json</summary>
-<div class="highlight"><pre><span></span><code>{
-    &quot;services&quot;: {
-      &quot;7c51be2c-4e29-415e-bc14-40e7c7537aec&quot;: {
-        &quot;name&quot;: &quot;back&quot;,
-        &quot;build&quot;: {
-          &quot;builder&quot;: &quot;docker&quot;,
-          &quot;dockerfilePath&quot;: &quot;railway/backend/Dockerfile&quot;,
-          &quot;buildContext&quot;: &quot;.&quot;
-        }
-      },
-      &quot;114f992a-2c0a-49f9-be31-8c9b830d1bbb&quot;: {
-        &quot;name&quot;: &quot;front&quot;,
-        &quot;build&quot;: {
-          &quot;builder&quot;: &quot;docker&quot;,
-          &quot;dockerfilePath&quot;: &quot;railway/frontend/Dockerfile&quot;,
-          &quot;buildContext&quot;: &quot;.&quot;
-        }
-      }
-    }
-  }
-</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    &quot;services&quot;: {
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>      &quot;7c51be2c-4e29-415e-bc14-40e7c7537aec&quot;: {
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        &quot;name&quot;: &quot;back&quot;,
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        &quot;build&quot;: {
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>          &quot;builder&quot;: &quot;docker&quot;,
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>          &quot;dockerfilePath&quot;: &quot;railway/backend/Dockerfile&quot;,
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>          &quot;buildContext&quot;: &quot;.&quot;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        }
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>      },
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      &quot;114f992a-2c0a-49f9-be31-8c9b830d1bbb&quot;: {
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        &quot;name&quot;: &quot;front&quot;,
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        &quot;build&quot;: {
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>          &quot;builder&quot;: &quot;docker&quot;,
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>          &quot;dockerfilePath&quot;: &quot;railway/frontend/Dockerfile&quot;,
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>          &quot;buildContext&quot;: &quot;.&quot;
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        }
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>      }
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    }
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>  }
+</span></code></pre></div>
 </details>
 </li>
 <li>
@@ -185,8 +350,7 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../Development%20documentation/core/service/midi_processing/" class="btn btn-neutral float-left" title="midi_processing Class"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../What/" class="btn btn-neutral float-right" title="What">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../../Development%20documentation/service/TokenizerFactory/" class="btn btn-neutral float-left" title="Tokenizer Factory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -209,10 +373,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../Development%20documentation/core/service/midi_processing/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../../Development%20documentation/service/TokenizerFactory/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../What/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
@@ -220,6 +382,7 @@
     <script>var base_url = "../..";</script>
     <script src="../../js/theme_extra.js"></script>
     <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
     <script>
         jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);

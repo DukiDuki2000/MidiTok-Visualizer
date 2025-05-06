@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Note Extractor - MidiTok Visualizer</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Note Extractor";
+        var mkdocs_page_input_path = "Development documentation/service/NoteExtractor.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MidiTok Visualizer
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">MidiTokVisualizer</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#midi-processing-and-visualization-library">MIDI Processing and Visualization Library</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#built-on-miditok">Built on MidiTok</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#supported-tokenizers">Supported Tokenizers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../..#running-the-application">Running the Application</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#using-docker-compose-recommended">Using Docker Compose (Recommended)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#running-the-application-manually">Running the Application Manually</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#running-the-documentation">Running the Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../..#online-deployment">Online Deployment</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Development documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Api</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/api/">API</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/api/#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/api/#endpoints">Endpoints</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../api/api/#process-midi-file">Process MIDI File</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/api/#error-handling">Error Handling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/api/#implementation-details">Implementation Details</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../api/api/#process-endpoint-logic">Process Endpoint Logic</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/api/#environment-variables">Environment Variables</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../api/model/">Model</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/model/#configmodel">ConfigModel</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../api/model/#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/model/#musicinformationdata">MusicInformationData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../api/model/#parameters_1">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/model/#basicinfodata">BasicInfoData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../api/model/#parameters_2">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/model/#metricsdata">MetricsData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../api/model/#parameters_3">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../api/model/#note">Note</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../api/model/#parameters_4">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Service</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../MidiInfoExtractor/">MIDI Info Extractor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor">midi_info_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor.MidiInformationExtractor">MidiInformationExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../MidiLoader/">MIDI Loader Class</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../MidiLoader/#backend.core.service.midi.midi_loader">midi_loader</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../MidiLoader/#backend.core.service.midi.midi_loader-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../MidiLoader/#backend.core.service.midi.midi_loader.MidiLoader">MidiLoader</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../MidiProcessing/">MIDI Processing</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../MidiProcessing/#backend.core.service.midi_processing">midi_processing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../MidiProcessing/#backend.core.service.midi_processing-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../MidiProcessing/#backend.core.service.midi_processing.MidiProcessor">MidiProcessor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Note Extractor</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#backend.core.service.note.note_extractor">note_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#backend.core.service.note.note_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#backend.core.service.note.note_extractor.NoteExtractor">NoteExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../NoteId/">Note ID</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../NoteId/#backend.core.service.note.note_id">note_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../NoteId/#backend.core.service.note.note_id-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../NoteId/#backend.core.service.note.note_id.NoteIDHandler">NoteIDHandler</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../TokenizerConfig/">Tokenizer Config</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config">tokenizer_config</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config.TokenizerConfigUser">TokenizerConfigUser</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../TokenizerFactory/">Tokenizer Factory</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory">tokenizer_factory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory.TokenizerFactory">TokenizerFactory</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Technical documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Technical%20documentation/RailwayDeploy/">Deploying the Application to Railway</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Technical%20documentation/RailwayDeploy/#deployment-steps">Deployment Steps</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MidiTok Visualizer</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Development documentation</li>
+          <li class="breadcrumb-item">Service</li>
+      <li class="breadcrumb-item active">Note Extractor</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="note-extractor">Note Extractor</h1>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<a id="backend.core.service.note.note_extractor"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+<h2 id="backend.core.service.note.note_extractor-classes">Classes</h2>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="backend.core.service.note.note_extractor.NoteExtractor" class="doc doc-heading">
+            <code>NoteExtractor</code>
+
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Utility class for extracting note information from MIDI files.</p>
+<p>This class provides functionality to convert MIDI files into structured Note objects
+that contain detailed information about each note in the file, including pitch, note name,
+start time, end time, and velocity.</p>
+
+
+
+
+
+
+
+              <details class="quote">
+                <summary>Source code in <code>backend/core/service/note/note_extractor.py</code></summary>
+                <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span>
+<span class="normal"><a href="#__codelineno-0-41">41</a></span>
+<span class="normal"><a href="#__codelineno-0-42">42</a></span>
+<span class="normal"><a href="#__codelineno-0-43">43</a></span>
+<span class="normal"><a href="#__codelineno-0-44">44</a></span>
+<span class="normal"><a href="#__codelineno-0-45">45</a></span>
+<span class="normal"><a href="#__codelineno-0-46">46</a></span>
+<span class="normal"><a href="#__codelineno-0-47">47</a></span>
+<span class="normal"><a href="#__codelineno-0-48">48</a></span>
+<span class="normal"><a href="#__codelineno-0-49">49</a></span>
+<span class="normal"><a href="#__codelineno-0-50">50</a></span>
+<span class="normal"><a href="#__codelineno-0-51">51</a></span>
+<span class="normal"><a href="#__codelineno-0-52">52</a></span>
+<span class="normal"><a href="#__codelineno-0-53">53</a></span>
+<span class="normal"><a href="#__codelineno-0-54">54</a></span>
+<span class="normal"><a href="#__codelineno-0-55">55</a></span>
+<span class="normal"><a href="#__codelineno-0-56">56</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">NoteExtractor</span><span class="p">:</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="sd">    Utility class for extracting note information from MIDI files.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="sd">    This class provides functionality to convert MIDI files into structured Note objects</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="sd">    that contain detailed information about each note in the file, including pitch, note name,</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="sd">    start time, end time, and velocity.</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="k">pass</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">midi_to_notes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">midi</span><span class="p">:</span> <span class="n">MidiToolkitFile</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Note</span><span class="p">]]:</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="sd">        Converts a MIDI file to a list of notes by track</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">        Args:</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">            midi: A MidiToolkitFile object</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">        Returns:</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">            A list of lists of Note objects, organized by track</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>        <span class="n">notes</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>        <span class="k">for</span> <span class="n">instrument</span> <span class="ow">in</span> <span class="n">midi</span><span class="o">.</span><span class="n">instruments</span><span class="p">:</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>            <span class="n">track_notes</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>            <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">instrument</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>                <span class="n">note_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pitch_to_name</span><span class="p">(</span><span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>                <span class="n">track_notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>                    <span class="n">Note</span><span class="p">(</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>                        <span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">,</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>                        <span class="n">note_name</span><span class="p">,</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>                        <span class="n">note</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>                        <span class="n">note</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>                        <span class="n">note</span><span class="o">.</span><span class="n">velocity</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>                    <span class="p">)</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>                <span class="p">)</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>            <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">track_notes</span><span class="p">)</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>        <span class="k">return</span> <span class="n">notes</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42"></a>    <span class="nd">@staticmethod</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_pitch_to_name</span><span class="p">(</span><span class="n">pitch</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="sd">        Converts a MIDI pitch to a note name</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46"></a>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="sd">        Args:</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="sd">            pitch: MIDI pitch value</span>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49"></a>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="sd">        Returns:</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="sd">            String representation of the note (e.g., &quot;C4&quot;)</span>
+</span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="sd">        &quot;&quot;&quot;</span>
+</span><span id="__span-0-53"><a id="__codelineno-0-53" name="__codelineno-0-53"></a>        <span class="n">note_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;C#&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;D#&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;F#&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;G#&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;A#&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">]</span>
+</span><span id="__span-0-54"><a id="__codelineno-0-54" name="__codelineno-0-54"></a>        <span class="n">octave</span> <span class="o">=</span> <span class="n">pitch</span> <span class="o">//</span> <span class="mi">12</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-0-55"><a id="__codelineno-0-55" name="__codelineno-0-55"></a>        <span class="n">note</span> <span class="o">=</span> <span class="n">note_names</span><span class="p">[</span><span class="n">pitch</span> <span class="o">%</span> <span class="mi">12</span><span class="p">]</span>
+</span><span id="__span-0-56"><a id="__codelineno-0-56" name="__codelineno-0-56"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">note</span><span class="si">}{</span><span class="n">octave</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+              </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<h4 id="backend.core.service.note.note_extractor.NoteExtractor-functions">Functions</h4>
+
+<div class="doc doc-object doc-function">
+
+
+<h5 id="backend.core.service.note.note_extractor.NoteExtractor.midi_to_notes" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">midi_to_notes</span><span class="p">(</span><span class="n">midi</span><span class="p">:</span> <span class="n">MidiToolkitFile</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Note</span><span class="p">]]</span></code>
+
+</h5>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Converts a MIDI file to a list of notes by track</p>
+
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Parameters:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+              <b><code>midi</code></b>
+                  (<code><span title="miditoolkit.MidiFile">MidiFile</span></code>)
+              –
+              <div class="doc-md-description">
+                <p>A MidiToolkitFile object</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="field-list">
+  <colgroup>
+    <col class="field-name" />
+    <col class="field-body" />
+  </colgroup>
+  <tbody valign="top">
+    <tr class="field">
+      <th class="field-name">Returns:</th>
+      <td class="field-body">
+        <ul class="first simple">
+            <li>
+                  <code><span title="typing.List">List</span>[<span title="typing.List">List</span>[<span title="core.api.model.Note">Note</span>]]</code>
+              –
+              <div class="doc-md-description">
+                <p>A list of lists of Note objects, organized by track</p>
+              </div>
+            </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+            <details class="quote">
+              <summary>Source code in <code>backend/core/service/note/note_extractor.py</code></summary>
+              <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span>
+<span class="normal"><a href="#__codelineno-0-30">30</a></span>
+<span class="normal"><a href="#__codelineno-0-31">31</a></span>
+<span class="normal"><a href="#__codelineno-0-32">32</a></span>
+<span class="normal"><a href="#__codelineno-0-33">33</a></span>
+<span class="normal"><a href="#__codelineno-0-34">34</a></span>
+<span class="normal"><a href="#__codelineno-0-35">35</a></span>
+<span class="normal"><a href="#__codelineno-0-36">36</a></span>
+<span class="normal"><a href="#__codelineno-0-37">37</a></span>
+<span class="normal"><a href="#__codelineno-0-38">38</a></span>
+<span class="normal"><a href="#__codelineno-0-39">39</a></span>
+<span class="normal"><a href="#__codelineno-0-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">midi_to_notes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">midi</span><span class="p">:</span> <span class="n">MidiToolkitFile</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Note</span><span class="p">]]:</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="sd">    Converts a MIDI file to a list of notes by track</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="sd">    Args:</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="sd">        midi: A MidiToolkitFile object</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="sd">    Returns:</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="sd">        A list of lists of Note objects, organized by track</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="n">notes</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26"></a>    <span class="k">for</span> <span class="n">instrument</span> <span class="ow">in</span> <span class="n">midi</span><span class="o">.</span><span class="n">instruments</span><span class="p">:</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27"></a>        <span class="n">track_notes</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28"></a>        <span class="k">for</span> <span class="n">note</span> <span class="ow">in</span> <span class="n">instrument</span><span class="o">.</span><span class="n">notes</span><span class="p">:</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29"></a>            <span class="n">note_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pitch_to_name</span><span class="p">(</span><span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">)</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30"></a>            <span class="n">track_notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31"></a>                <span class="n">Note</span><span class="p">(</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32"></a>                    <span class="n">note</span><span class="o">.</span><span class="n">pitch</span><span class="p">,</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33"></a>                    <span class="n">note_name</span><span class="p">,</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34"></a>                    <span class="n">note</span><span class="o">.</span><span class="n">start</span><span class="p">,</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35"></a>                    <span class="n">note</span><span class="o">.</span><span class="n">end</span><span class="p">,</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36"></a>                    <span class="n">note</span><span class="o">.</span><span class="n">velocity</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37"></a>                <span class="p">)</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38"></a>            <span class="p">)</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39"></a>        <span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">track_notes</span><span class="p">)</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40"></a>    <span class="k">return</span> <span class="n">notes</span>
+</span></code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../MidiProcessing/" class="btn btn-neutral float-left" title="MIDI Processing"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../NoteId/" class="btn btn-neutral float-right" title="Note ID">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../MidiProcessing/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../NoteId/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

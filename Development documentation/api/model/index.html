@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Model - MidiTok Visualizer</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../assets/_mkdocstrings.css" rel="stylesheet" />
+        <link href="../../../css/extra.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Model";
+        var mkdocs_page_input_path = "Development documentation/api/model.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> MidiTok Visualizer
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">MidiTokVisualizer</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#midi-processing-and-visualization-library">MIDI Processing and Visualization Library</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#built-on-miditok">Built on MidiTok</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#supported-tokenizers">Supported Tokenizers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../..#getting-started">Getting Started</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../..#running-the-application">Running the Application</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#using-docker-compose-recommended">Using Docker Compose (Recommended)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#running-the-application-manually">Running the Application Manually</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../..#running-the-documentation">Running the Documentation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../..#online-deployment">Online Deployment</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Development documentation</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Api</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../api/">API</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../api/#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../api/#endpoints">Endpoints</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../api/#process-midi-file">Process MIDI File</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../api/#error-handling">Error Handling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../api/#implementation-details">Implementation Details</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../api/#process-endpoint-logic">Process Endpoint Logic</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../api/#environment-variables">Environment Variables</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Model</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#configmodel">ConfigModel</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#musicinformationdata">MusicInformationData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_1">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#basicinfodata">BasicInfoData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_2">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#metricsdata">MetricsData</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_3">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#note">Note</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#parameters_4">Parameters</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Service</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/MidiInfoExtractor/">MIDI Info Extractor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor">midi_info_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/MidiInfoExtractor/#backend.core.service.midi.midi_info_extractor.MidiInformationExtractor">MidiInformationExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/MidiLoader/">MIDI Loader Class</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiLoader/#backend.core.service.midi.midi_loader">midi_loader</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiLoader/#backend.core.service.midi.midi_loader-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/MidiLoader/#backend.core.service.midi.midi_loader.MidiLoader">MidiLoader</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/MidiProcessing/">MIDI Processing</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiProcessing/#backend.core.service.midi_processing">midi_processing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/MidiProcessing/#backend.core.service.midi_processing-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/MidiProcessing/#backend.core.service.midi_processing.MidiProcessor">MidiProcessor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/NoteExtractor/">Note Extractor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteExtractor/#backend.core.service.note.note_extractor">note_extractor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteExtractor/#backend.core.service.note.note_extractor-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/NoteExtractor/#backend.core.service.note.note_extractor.NoteExtractor">NoteExtractor</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/NoteId/">Note ID</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteId/#backend.core.service.note.note_id">note_id</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/NoteId/#backend.core.service.note.note_id-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/NoteId/#backend.core.service.note.note_id.NoteIDHandler">NoteIDHandler</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/TokenizerConfig/">Tokenizer Config</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config">tokenizer_config</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/TokenizerConfig/#backend.core.service.tokenizer.tokenizer_config.TokenizerConfigUser">TokenizerConfigUser</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../service/TokenizerFactory/">Tokenizer Factory</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory">tokenizer_factory</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory-classes">Classes</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../service/TokenizerFactory/#backend.core.service.tokenizer.tokenizer_factory.TokenizerFactory">TokenizerFactory</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Technical documentation</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Technical%20documentation/RailwayDeploy/">Deploying the Application to Railway</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../../Technical%20documentation/RailwayDeploy/#deployment-steps">Deployment Steps</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">MidiTok Visualizer</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Development documentation</li>
+          <li class="breadcrumb-item">Api</li>
+      <li class="breadcrumb-item active">Model</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="model">Model</h1>
+<h3 id="configmodel">ConfigModel</h3>
+<p>Configuration model that defines the parameters for MIDI tokenization and processing.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ConfigModel</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span></code></pre></div>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tokenizer</code></td>
+<td><code>Literal</code></td>
+<td>The tokenization method to use. Options include "REMI", "REMIPlus", "MIDILike", "TSD", "Structured", "CPWord", "Octuple", "MuMIDI", "MMM", "PerTok".</td>
+</tr>
+<tr>
+<td><code>pitch_range</code></td>
+<td><code>list[int]</code></td>
+<td>A list containing the minimum and maximum MIDI pitch values to consider (0-127).</td>
+</tr>
+<tr>
+<td><code>num_velocities</code></td>
+<td><code>int</code></td>
+<td>The number of velocity levels to quantize to (0-127).</td>
+</tr>
+<tr>
+<td><code>special_tokens</code></td>
+<td><code>list[str]</code></td>
+<td>List of special tokens to include in the vocabulary.</td>
+</tr>
+<tr>
+<td><code>use_chords</code></td>
+<td><code>bool</code></td>
+<td>Whether to include chord tokens in the tokenization.</td>
+</tr>
+<tr>
+<td><code>use_rests</code></td>
+<td><code>bool</code></td>
+<td>Whether to include rest tokens in the tokenization.</td>
+</tr>
+<tr>
+<td><code>use_tempos</code></td>
+<td><code>bool</code></td>
+<td>Whether to include tempo tokens in the tokenization.</td>
+</tr>
+<tr>
+<td><code>use_time_signatures</code></td>
+<td><code>bool</code></td>
+<td>Whether to include time signature tokens in the tokenization.</td>
+</tr>
+<tr>
+<td><code>use_sustain_pedals</code></td>
+<td><code>bool</code></td>
+<td>Whether to include sustain pedal events in the tokenization.</td>
+</tr>
+<tr>
+<td><code>use_pitch_bends</code></td>
+<td><code>bool</code></td>
+<td>Whether to include pitch bend events in the tokenization.</td>
+</tr>
+<tr>
+<td><code>num_tempos</code></td>
+<td><code>NonNegativeInt</code></td>
+<td>The number of tempo levels to quantize to.</td>
+</tr>
+<tr>
+<td><code>tempo_range</code></td>
+<td><code>list[NonNegativeInt]</code></td>
+<td>A list containing the minimum and maximum tempo values in BPM.</td>
+</tr>
+<tr>
+<td><code>log_tempos</code></td>
+<td><code>bool</code></td>
+<td>Whether to use logarithmic scaling for tempo quantization.</td>
+</tr>
+<tr>
+<td><code>delete_equal_successive_tempo_changes</code></td>
+<td><code>bool</code></td>
+<td>Whether to remove consecutive identical tempo changes.</td>
+</tr>
+<tr>
+<td><code>sustain_pedal_duration</code></td>
+<td><code>bool</code></td>
+<td>Whether to include sustain pedal duration in tokenization.</td>
+</tr>
+<tr>
+<td><code>pitch_bend_range</code></td>
+<td><code>list[int]</code></td>
+<td>A list of three values defining the minimum, maximum, and step size for pitch bend.</td>
+</tr>
+<tr>
+<td><code>delete_equal_successive_time_sig_changes</code></td>
+<td><code>bool</code></td>
+<td>Whether to remove consecutive identical time signature changes.</td>
+</tr>
+<tr>
+<td><code>use_programs</code></td>
+<td><code>bool</code></td>
+<td>Whether to include program change events in the tokenization.</td>
+</tr>
+<tr>
+<td><code>programs</code></td>
+<td><code>Optional[list[int]]</code></td>
+<td>Optional range of MIDI program numbers to include.</td>
+</tr>
+<tr>
+<td><code>one_token_stream_for_programs</code></td>
+<td><code>Optional[bool]</code></td>
+<td>Whether to use a single token stream for all programs.</td>
+</tr>
+<tr>
+<td><code>program_changes</code></td>
+<td><code>Optional[bool]</code></td>
+<td>Whether to include program change events.</td>
+</tr>
+<tr>
+<td><code>use_microtiming</code></td>
+<td><code>bool</code></td>
+<td>Whether to include microtiming information.</td>
+</tr>
+<tr>
+<td><code>ticks_per_quarter</code></td>
+<td><code>int</code></td>
+<td>MIDI ticks per quarter note (24-960).</td>
+</tr>
+<tr>
+<td><code>max_microtiming_shift</code></td>
+<td><code>float</code></td>
+<td>Maximum microtiming shift as a fraction of a beat (0-1).</td>
+</tr>
+<tr>
+<td><code>num_microtiming_bins</code></td>
+<td><code>int</code></td>
+<td>Number of bins for quantizing microtiming (1-64).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="musicinformationdata">MusicInformationData</h3>
+<p>Model that contains extracted information and metrics from a MIDI file.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">MusicInformationData</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span></code></pre></div>
+<h4 id="parameters_1">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><code>str</code></td>
+<td>The title of the MIDI file.</td>
+</tr>
+<tr>
+<td><code>resolution</code></td>
+<td><code>PositiveInt</code></td>
+<td>The MIDI file resolution (ticks per quarter note).</td>
+</tr>
+<tr>
+<td><code>tempos</code></td>
+<td><code>list[tuple[NonNegativeInt, float]]</code></td>
+<td>List of tempo changes as (tick, tempo in BPM) pairs.</td>
+</tr>
+<tr>
+<td><code>key_signatures</code></td>
+<td><code>list[tuple[NonNegativeInt, int, str]]</code></td>
+<td>List of key signature changes as (tick, key, mode) triplets.</td>
+</tr>
+<tr>
+<td><code>time_signatures</code></td>
+<td><code>list[tuple[NonNegativeInt, int, int]]</code></td>
+<td>List of time signature changes as (tick, numerator, denominator) triplets.</td>
+</tr>
+<tr>
+<td><code>pitch_range</code></td>
+<td><code>NonNegativeInt</code></td>
+<td>The range between the highest and lowest pitch used in the MIDI file.</td>
+</tr>
+<tr>
+<td><code>n_pitches_used</code></td>
+<td><code>NonNegativeInt</code></td>
+<td>The number of unique pitches used in the MIDI file.</td>
+</tr>
+<tr>
+<td><code>polyphony</code></td>
+<td><code>NonNegativeFloat</code></td>
+<td>The average number of simultaneous notes played.</td>
+</tr>
+<tr>
+<td><code>empty_beat_rate</code></td>
+<td><code>NonNegativeFloat</code></td>
+<td>The ratio of beats with no notes to total beats.</td>
+</tr>
+<tr>
+<td><code>drum_pattern_consistency</code></td>
+<td><code>NonNegativeFloat</code></td>
+<td>A measure of how consistent drum patterns are throughout the MIDI file (0-1).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basicinfodata">BasicInfoData</h3>
+<p>Data class that contains basic information extracted from a MIDI file.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@dataclass</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">BasicInfoData</span><span class="p">:</span>
+</span></code></pre></div>
+<h4 id="parameters_2">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><code>str</code></td>
+<td>The title of the MIDI file.</td>
+</tr>
+<tr>
+<td><code>resolution</code></td>
+<td><code>int</code></td>
+<td>The MIDI file resolution (ticks per quarter note).</td>
+</tr>
+<tr>
+<td><code>tempos</code></td>
+<td><code>list[tuple[int, float]]</code></td>
+<td>List of tempo changes as (tick, tempo in BPM) pairs.</td>
+</tr>
+<tr>
+<td><code>key_signatures</code></td>
+<td><code>list[tuple[int, int, str]]</code></td>
+<td>List of key signature changes as (tick, key, mode) triplets.</td>
+</tr>
+<tr>
+<td><code>time_signatures</code></td>
+<td><code>list[tuple[int, int, int]]</code></td>
+<td>List of time signature changes as (tick, numerator, denominator) triplets.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metricsdata">MetricsData</h3>
+<p>Data class that contains calculated metrics from a MIDI file.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@dataclass</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">MetricsData</span><span class="p">:</span>
+</span></code></pre></div>
+<h4 id="parameters_3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pitch_range</code></td>
+<td><code>int</code></td>
+<td>The range between the highest and lowest pitch used in the MIDI file.</td>
+</tr>
+<tr>
+<td><code>n_pitches_used</code></td>
+<td><code>int</code></td>
+<td>The number of unique pitches used in the MIDI file.</td>
+</tr>
+<tr>
+<td><code>polyphony</code></td>
+<td><code>float</code></td>
+<td>The average number of simultaneous notes played.</td>
+</tr>
+<tr>
+<td><code>empty_beat_rate</code></td>
+<td><code>float</code></td>
+<td>The ratio of beats with no notes to total beats.</td>
+</tr>
+<tr>
+<td><code>drum_pattern_consistency</code></td>
+<td><code>float</code></td>
+<td>A measure of how consistent drum patterns are throughout the MIDI file (0-1).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="note">Note</h3>
+<p>Data class representing a single note in a MIDI file.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nd">@dataclass</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Note</span><span class="p">:</span>
+</span></code></pre></div>
+<h4 id="parameters_4">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pitch</code></td>
+<td><code>int</code></td>
+<td>The MIDI pitch value of the note (0-127).</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>The note name (e.g., "C4", "F#5").</td>
+</tr>
+<tr>
+<td><code>start</code></td>
+<td><code>int</code></td>
+<td>The start time of the note in MIDI ticks.</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td><code>int</code></td>
+<td>The end time of the note in MIDI ticks.</td>
+</tr>
+<tr>
+<td><code>velocity</code></td>
+<td><code>int</code></td>
+<td>The velocity (loudness) of the note (0-127).</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../api/" class="btn btn-neutral float-left" title="API"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../service/MidiInfoExtractor/" class="btn btn-neutral float-right" title="MIDI Info Extractor">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../api/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../service/MidiInfoExtractor/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
