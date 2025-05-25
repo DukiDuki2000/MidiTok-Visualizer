@@ -81,7 +81,9 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#endpoints">Endpoints</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#process-midi-file">Process MIDI File</a>
+    <li class="toctree-l4"><a class="reference internal" href="#1-process-midi-file">1. Process MIDI File</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-convert-to-midi">2. Convert to MIDI</a>
     </li>
         </ul>
     </li>
@@ -280,7 +282,7 @@
 <li><strong>MidiProcessor</strong>: Core component for processing MIDI files</li>
 </ul>
 <h2 id="endpoints">Endpoints</h2>
-<h3 id="process-midi-file">Process MIDI File</h3>
+<h3 id="1-process-midi-file">1. Process MIDI File</h3>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>POST /process
 </span></code></pre></div>
 <p>This endpoint processes a MIDI file according to the provided configuration.</p>
@@ -324,6 +326,34 @@
 <li><strong>415 Unsupported Media Type</strong>: If the uploaded file is not a MIDI file</li>
 <li><strong>422 Unprocessable Entity</strong>: If the request parameters are invalid</li>
 <li><strong>500 Internal Server Error</strong>: If an unexpected error occurs during processing</li>
+</ul>
+<h3 id="2-convert-to-midi">2. Convert to MIDI</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>POST /convert-to-midi/
+</span></code></pre></div>
+<p>This endpoint converts processed musical data back into a MIDI file format.</p>
+<h4 id="request_1">Request</h4>
+<p><strong>Content-Type:</strong> <code>application/json</code></p>
+<p>The request body should conform to the <code>MIDIConversionRequest</code> model structure:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;output_filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;converted_song.mid&quot;</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">  </span><span class="c1">// Array of MIDI events</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;tracks&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">  </span><span class="c1">// Track configuration</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="c1">// ... other conversion parameters</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="response_1">Response</h4>
+<p><strong>Success Response (200):</strong>
+- <strong>Content-Type</strong>: <code>audio/midi</code>
+- <strong>Content-Disposition</strong>: <code>attachment; filename={output_filename}</code>
+- <strong>Body</strong>: Binary MIDI file data</p>
+<p>The response is a streaming download of the generated MIDI file.</p>
+<h4 id="error-responses_1">Error Responses</h4>
+<ul>
+<li><strong>500 Internal Server Error</strong>: If an error occurs during MIDI conversion
+  <div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;detail&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An error occurred during MIDI conversion: {error_details}&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+</span></code></pre></div></li>
 </ul>
 <h2 id="error-handling">Error Handling</h2>
 <p>The API includes robust error handling:</p>
