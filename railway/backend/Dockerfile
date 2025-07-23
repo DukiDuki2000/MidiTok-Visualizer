@@ -1,4 +1,4 @@
-FROM python:3.11-buster AS builder
+FROM python:3.11-bookworm AS builder
 RUN apt-get update && apt-get install -y libc6
 RUN pip install poetry==1.6.1
 ENV POETRY_NO_INTERACTION=1 \
@@ -13,7 +13,7 @@ COPY backend/core ./core
 COPY backend/tests ./tests
 RUN poetry run pytest
 
-FROM python:3.11-slim-buster AS runtime
+FROM python:3.11-slim-bookworm AS runtime
 ENV VIRTUAL_ENV=/app/.venv \
     PATH="/app/.venv/bin:$PATH" \
     REACT_APP_API_BASE_URL="https://miditok-visualizer-front-production.up.railway.app"
